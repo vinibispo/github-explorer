@@ -1,0 +1,34 @@
+li {
+
+  img {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+  }
+
+  padding: 40px;
+  background: #edf6f9;
+  border-radius: 30px;
+
+  & + li {
+    margin-top: 20px;
+  }
+
+  strong {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 14px;
+    color: #444;
+    margin-top: 8px;
+  }
+
+  a {
+    display: inline-block;
+    margin-top: 16px;
+    text-decoration: none;
+    color: #8257e6;
+  }
+
+}

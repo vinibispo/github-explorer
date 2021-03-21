@@ -1,0 +1,30 @@
+.welcome {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  img {
+    margin-top: 2rem;
+    width: 12rem;
+    height: 12rem;
+    border: 3px solid #000;
+    border-radius: 50%;
+  }
+
+  .card {
+    margin-top: 3rem;
+
+    h3 {
+      display: block;
+      margin-top: 2rem;
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+  }
+}

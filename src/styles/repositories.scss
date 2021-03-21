@@ -1,32 +1,26 @@
 section.repository-list {
-  margin: 40px;
-
+  margin: 2.5rem;
   h1 {
-    margin-bottom: 16px;
+    text-align: center;
+    font-size: 2rem;
   }
 
+  input {
+    height: 3rem;
+    padding: 0 2rem;
+    border: 0;
+    width: 100%;
+    font-size: 1rem;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+    background-color: #efefef;
+    border: 2px solid #333;
+    margin-bottom: 2rem;
+    margin-top: 3rem;
+
+  }
   ul {
     list-style: none;
-
-    li {
-
-      & + li {
-        margin-top: 20px;
-      }
-
-      p {
-        font-size: 14px;
-        color: #444;
-        margin-top: 8px;
-      }
-
-      a {
-        display: inline-block;
-        margin-top: 16px;
-        text-decoration: none;
-        color: #8257e6;
-      }
-
-    }
   }
 }
