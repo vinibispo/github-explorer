@@ -1,6 +1,9 @@
 # Github Explorer
 
 ---
+
+![Peek 2021-03-21 12-00](https://user-images.githubusercontent.com/48097622/111923467-210dd880-8a7e-11eb-9c69-942f861990bd.gif)
+
 ### Tópicos
 
 :large_blue_diamond: [Descrição do projeto](#descrição-do-projeto)
@@ -12,7 +15,6 @@
 :large_blue_diamond: [Pré-requisitos](#pré-requisitos)
 
 :large_blue_diamond: [Como rodar a aplicação](#como-rodar-a-aplicação)
-
 
 ---
 
@@ -63,24 +65,24 @@ Um superset para javascript
 ### Como rodar a aplicação
 
 - Clonando repositório
-
+  
   ```bash
   git clone https://vinibispo/github-explorer
   ```
 
 - Entrando na pasta
-
+  
   ```bash
   cd github-explorer
   ```
 
 - Instalando dependências
-
+  
   ```bash
   yarn
   ```
 * Iniciando aplicação
-
+  
   ```bash
   yarn start
   ```
