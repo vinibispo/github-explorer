@@ -1,7 +1,7 @@
-import {RepositoryList} from './components/RepositoryList'
+import {Router} from './router'
 import './styles/global.scss'
 export function App() {
   return (
-    <RepositoryList />
+    <Router />
   )
 }

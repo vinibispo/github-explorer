@@ -9,3 +9,5 @@ export interface Repository {
   html_url: string;
   owner: Owner
 }
+
+export type STATUS_TYPE = 'IDLE' | 'PENDING' | 'RESOLVED' | 'REJECTED'

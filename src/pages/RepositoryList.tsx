@@ -1,14 +1,12 @@
 import { RepositoryItem } from "./RepositoryItem";
 import '../styles/repositories.scss'
 import {useCallback, useEffect, useReducer, useState} from "react";
-import {Repository} from "../utils/types";
+import {Repository, STATUS_TYPE} from "../utils/types";
 import {api} from "../services/api";
 import {Loader} from "./Loader";
 import debounce from 'lodash/debounce'
-import {Error as ErrorComponent} from "./Error";
-import {Welcome} from "./Welcome";
+import {RepositoryListCase} from "../components/RepositoryListCase";
 
-type STATUS_TYPE = 'IDLE' | 'PENDING' | 'RESOLVED' | 'REJECTED'
 interface ActionRepositoryList {
   type: STATUS_TYPE
   data: Repository[]
@@ -88,33 +86,3 @@ export function RepositoryList() {
   )
 }
 
-interface RepositoryListCaseProps {
-  status: STATUS_TYPE
-  repositories: Repository[]
-}
-export function RepositoryListCase({status, repositories}: RepositoryListCaseProps) {
-  switch(status ) {
-    case 'RESOLVED':
-      return (
-          <ul>
-            {repositories.map(repository => (
-              <RepositoryItem key={repository.id} repository={repository} />
-            ))}
-          </ul>
-    )
-    case 'PENDING':
-      return (
-        <Loader />
-    )
-    case 'IDLE':
-      return (
-        <Welcome />
-    )
-    case 'REJECTED':
-      return (
-        <ErrorComponent message={'Erro na API'} />
-    )
-    default:
-      throw new Error(`Unhandled status ${status}`)
-  }
-}
