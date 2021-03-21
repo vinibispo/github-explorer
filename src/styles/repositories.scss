@@ -5,6 +5,16 @@ section.repository-list {
     font-size: 2rem;
   }
 
+  .flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .logo {
+    width: 2rem;
+    margin-right: 1rem;
+  }
+
   input {
     height: 3rem;
     padding: 0 2rem;
