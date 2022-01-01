@@ -1,12 +1,12 @@
-import {BrowserRouter, Route, Switch} from "react-router-dom";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
 import {RepositoryList} from "../pages/RepositoryList";
 
 export function Router () {
   return (
     <BrowserRouter>
-      <Switch>
-        <Route path="/" component={RepositoryList} />
-      </Switch>
+      <Routes>
+        <Route path="/" element={<RepositoryList />} />
+      </Routes>
     </BrowserRouter>
   )
 }
