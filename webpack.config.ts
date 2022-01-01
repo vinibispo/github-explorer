@@ -1,9 +1,9 @@
-const path = require('path')
-const HTMLWebpackPlugin = require('html-webpack-plugin')
-const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
-
+import path from 'path'
+import HTMLWebpackPlugin from 'html-webpack-plugin'
+import { Configuration } from 'webpack'
 const isDevelopment = process.env.NODE_ENV !== 'production'
-module.exports = {
+const config: Configuration = {
+
   mode: isDevelopment ? 'development' : 'production',
   devtool: isDevelopment ? 'eval-source-map' : 'souce-map',
   entry: path.resolve(__dirname, 'src', 'index.tsx'),
@@ -22,7 +22,6 @@ module.exports = {
     new HTMLWebpackPlugin({
       template: path.resolve(__dirname, 'public', 'index.html'),
     }),
-    isDevelopment && new ReactRefreshWebpackPlugin()
   ].filter(Boolean),
   module: {
     rules: [
@@ -61,3 +60,4 @@ module.exports = {
     ],
   },
 }
+export default config
