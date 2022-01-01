@@ -1,49 +1,8 @@
-import path from 'path'
-import HTMLWebpackPlugin from 'html-webpack-plugin'
-import { Configuration } from 'webpack'
-const isDevelopment = process.env.NODE_ENV !== 'production'
-const config: Configuration = {
+import { merge } from 'webpack-merge'
+import baseConfig from './webpack/webpack.base'
+const mode = process.env.NODE_ENV === 'development' ? 'dev' : 'prod'
+import devConfig  from './webpack/webpack.dev'
+import prodConfig from './webpack/webpack.prod'
 
-  mode: isDevelopment ? 'development' : 'production',
-  devtool: isDevelopment ? 'eval-source-map' : 'souce-map',
-  entry: path.resolve(__dirname, 'src', 'index.tsx'),
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
-  },
-  resolve: {
-    extensions: ['.js', '.jsx', '.ts', '.tsx'],
-  },
-  devServer: {
-    static: { directory: path.resolve(__dirname, 'public') },
-    hot: true,
-  },
-  plugins: [
-    new HTMLWebpackPlugin({
-      template: path.resolve(__dirname, 'public', 'index.html'),
-    }),
-  ].filter(Boolean),
-  module: {
-    rules: [
-      {
-        test: /(\.(j|t)sx$)/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-        }
-      },
-      {
-        test: /(\.scss$)/,
-        exclude: /node_modules/,
-        use: [
-          'style-loader', 'css-loader', 'sass-loader'
-        ],
-      },
-      {
-        test: /\.(gif|png|jpe?g|svg)$/i,
-        type: 'asset/resource'
-      }
-    ],
-  },
-}
-export default config
+const config = mode === 'dev' ? devConfig : prodConfig
+export default merge(baseConfig, config)
