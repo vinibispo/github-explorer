@@ -4,7 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "webpack serve"
+    "dev": "webpack serve",
+    "build": "webpack",
+    "start": "serve dist"
   },
   "dependencies": {
     "axios": "^0.24.0",
@@ -31,6 +33,7 @@
     "html-webpack-plugin": "^5.5.0",
     "sass": "^1.45.2",
     "sass-loader": "^12.4.0",
+    "serve": "^13.0.2",
     "style-loader": "^3.3.1",
     "ts-node": "^10.4.0",
     "typescript": "^4.5.4",
